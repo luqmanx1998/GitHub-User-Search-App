@@ -1,0 +1,538 @@
+:root {
+    /* COMMON COLOURS */
+    --lightblue: rgb(0, 121, 255);
+
+
+    /* LIGHT MODE COLOURS */
+    --grey: rgb(105, 124, 154);
+    --darkblue: rgb(75, 106, 155);
+    --black: rgb(43, 52, 66);
+    --lightgrey: rgb(246, 248, 255);
+    --white1: rgb(254, 254, 254);
+
+    /* DARK MODE COLOURS */
+    --white2: rgb(255, 255, 255);
+    --black2: rgb(20, 29, 47);
+    --verydarkblue: rgb(30, 42, 71);
+    --lightbluehover: #60ABFF;
+    --greyhover: #90A4D4;
+
+    /* TYPOGRAPHY */
+    --h1: 2.6rem;
+    --h1lineheight: 3.8rem;
+
+    --h2: 2.2rem;
+    --h2lineheight: 3.3rem;
+
+    --h3: 1.6rem;
+    --h3lineheight: 2.4rem;
+
+    --h4: 1.3rem;
+    --h4lineheight: 2rem;
+
+    --pfontsize: 1.5rem;
+    --plineheight: 2.5rem;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Mono", monospace;
+    background-color: var(--black2);
+    color: var(--white2);
+}
+
+body, p {
+    font-size: var(--pfontsize);
+    line-height: var(--plineheight);
+    font-weight: 400;
+}
+
+h1 {
+    font-size: var(--h1);
+    line-height: var(--h1lineheight);
+}
+
+h2 {
+    font-size: var(--h2);
+    line-height: var(--h2lineheight);
+}
+
+h3 {
+    font-size: var(--h3);
+    line-height: var(--h3lineheight);
+}
+
+h4 {
+    font-size: var(--h4);
+    line-height: var(--h4lineheight);
+}
+
+h1, h2, h3, h4 {
+    font-weight: 700;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.user-profile-img {
+    width: 7rem;
+    height: 7rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.container {
+    padding: 3.1rem 2.4rem 7.7rem 2.4rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-lightdark-dark,
+.toggle-lightdark-light {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    cursor: pointer;
+}
+
+/* .toggle-lightdark-dark {
+    display: none;
+} */
+
+.toggle-lightdark-dark span,
+.toggle-lightdark-light span {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    letter-spacing: 0.25rem;
+    font-weight: 700;
+}
+
+.toggle-lightdark-dark:hover span,
+.toggle-lightdark-dark:hover svg path{
+    color: var(--greyhover);
+    fill: var(--greyhover);
+}
+
+.searchbar {
+    display: flex;
+    width: 100%;
+    margin-top: 3.6rem;
+    margin-bottom: 1.6rem;
+    padding: 0.7rem;
+    background-color: var(--verydarkblue);
+    align-items: center;
+    border-radius: 1.5rem;
+    gap: 0.8rem;
+    position: relative;
+    justify-content: space-between;
+}
+
+.error-msg {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    transform: translate(-50%, -50%);
+    color: #F74646;
+}
+
+
+.search-btn {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--white2);
+    background-color: var(--lightblue);
+    border: none;
+    border-radius: 1rem;
+    padding: 1.25rem 1.6rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.search-btn:hover {
+    background-color: var(--lightbluehover);
+}
+
+input[name="search"] {
+    border: none;
+    background-color: var(--verydarkblue);
+    height: 2.5rem;
+    width: 18.4rem;
+    color: var(--white2);
+    font-family: inherit;
+}
+
+input[name="search"]::placeholder {
+    font-family: inherit;
+    font-size: 1.3rem;
+    color: var(--white2);
+    font-weight: 400;
+    line-height: var(--plineheight);
+    letter-spacing: 0px;
+}
+
+input[name="search"]:focus {
+    border: none;
+    outline: none;
+    caret-color: var(--lightblue);
+}
+
+.user-header {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3.3rem;
+}
+
+
+.user-handle {
+    color: var(--lightblue);
+    font-weight: 400;
+}
+
+.user-join-date {
+    font-size: 1.3rem;
+}
+
+.user-profile-card {
+    padding: 3.2rem 2.4rem 4.8rem 2.4rem;
+    background-color: var(--verydarkblue);
+    border-radius: 1.5rem;
+}
+
+.user-bio {
+    font-size: 1.3rem;
+    margin-bottom: 2.3rem;
+}
+
+.user-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.85rem 1.4rem;
+    background-color: var(--black2);
+    border-radius: 1rem;
+    margin-bottom: 2.4rem;
+}
+
+.user-stats > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.user-stats > div > h4 {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.user-stats > div > span {
+    font-weight: 700;
+    font-size: 1.6rem;
+}
+
+.user-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    font-style: normal;
+}
+
+.user-contact> div > svg g,
+.user-contact> div > svg path{
+    fill: var(--white2);
+}
+
+.user-contact > div {
+    display: flex;
+    gap: 1.9rem;
+    align-items: center;
+}
+
+.user-contact span {
+    font-size: 1.3rem;
+}
+
+.user-contact div.unavailable svg path {
+    fill: var(--grey);
+}
+
+.user-contact div.unavailable span {
+    color: var(--grey);
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+/* LIGHTMODE STYLES */
+
+body.light {
+    background-color: var(--white1);
+    color: var(--black);
+}
+
+.toggle-lightdark-light span {
+    color: var(--darkblue);
+}
+
+.toggle-lightdark-light svg path {
+    fill: var(--darkblue);
+}
+
+.toggle-lightdark-light:hover span,
+.toggle-lightdark-light:hover svg path{
+    color: var(--black);
+    fill: var(--black);
+}
+
+.searchbar.light {
+    background-color: var(--white1);
+    box-shadow: 0px 6px 19px -9px rgba(105,124,154,1);
+}
+
+
+.searchbar.light input[name="search"] {
+    background-color: var(--white1);
+    color: var(--black);
+}
+
+.searchbar.light input[name="search"]::placeholder {
+    color: var(--grey);
+}
+
+.searchbar.light input[name="search"]:focus {
+    border: none;
+    outline: none;
+    caret-color: var(--lightblue);
+}
+
+.user-handle.light {
+    color: var(--lightblue);
+    font-weight: 400;
+}
+
+.user-join-date.light {
+    color: var(--grey);
+}
+
+.user-profile-card.light {
+    background-color: var(--white1);
+    box-shadow: 0px 6px 19px -9px rgba(105,124,154,1);
+}
+
+.user-bio.light {
+    color: var(--darkblue);
+}
+
+.user-stats.light {
+    background-color: var(--lightgrey);
+}
+
+.user-stats.light > div > h4 {
+    color: var(--darkblue);
+}
+
+.user-stats.light > div > span {
+    font-weight: 700;
+    /* font-size: 1.6rem; */
+}
+
+.user-contact.light > div > svg g,
+.user-contact.light > div > svg path{
+    fill: var(--darkblue);
+}
+
+.user-contact.light span {
+    color: var(--darkblue);
+}
+
+.user-contact.light .user-social svg path {
+    fill: var(--greyhover);
+}
+
+.user-contact.light .user-social span{
+    color: var(--greyhover);
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        min-height: 100vh;
+        width: 100vw;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 57.3rem;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .searchbar {
+        justify-content: space-between;
+        padding: 2.3rem 0.7rem 2.3rem 3.2rem;
+        height: 6.9rem;
+        margin-bottom: 2.4rem;
+    }
+
+    input[name="search"] {
+        width: 100%;
+        margin-left: 2rem;
+        font-size: 1.8rem;
+    }
+
+    input[name="search"]::placeholder {
+        font-size: 1.8rem;
+    }
+
+    .search-btn {
+        width: 10.6rem;
+        font-size: var(--h3);
+    }
+
+    .user-profile-card {
+        padding: 4rem;
+    }
+        
+    .user-header {
+        gap: 4.1rem;
+        margin-bottom: 2.4rem;
+    }
+
+    .user-header-info {
+        margin-top: 1.2rem;
+        height: 9.1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .username-display {
+        display: flex;
+        flex-direction: column;
+        gap: 1.45rem;
+    }
+
+    .user-profile-img {
+        width: 11.7rem;
+        height: 11.7rem;
+    }
+
+    .username {
+        font-size: 2.6rem;
+    }
+
+    .user-handle {
+        font-size: 1.6rem;
+    }
+
+    .user-join-date {
+        font-size: 1.5rem;
+    }
+    
+    .user-bio {
+        font-size: 1.5rem;
+        margin-bottom: 3.2rem;
+    }
+    
+    .user-stats {
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .user-stats div h4 {
+        font-size: 1.3rem;
+    }
+
+    .user-stats div span {
+        font-size: 2.2rem;
+    }
+
+    .user-contact {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .user-contact div span {
+        font-size: 1.5rem;
+    }
+
+    .error-msg {
+        left: 71%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .container {
+        max-width: 73rem;
+    }
+
+
+
+    .hidden-img {
+        display: block;
+        width: 11.7rem;
+        align-self: start;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .user-profile-card {
+        display: flex;
+        gap: 3.7rem;
+    }
+
+    .user-profile-img {
+        display: none;
+    }
+
+    .user-profile-info {
+        width: calc(100% - 11.7rem);
+    }
+
+    .user-header-info,
+    .user-header-info.light {
+        flex-direction: row;
+        flex: 1;
+        margin-top: 0;
+        height: auto;
+        margin-bottom: 2rem;
+    }
+    
+    .user-header {
+        margin-bottom: 0;
+    }
+
+    /* .user-stats {
+        justify-content: flex-start;
+    } */
+
+    .error-msg {
+        left: 77%;
+    }
+}
