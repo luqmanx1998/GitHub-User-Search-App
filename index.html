@@ -57,6 +57,7 @@ const displayUserData = (userData) => {
 
 const loadUser = async (username) => {
   const API_KEY = process.env.NEXT_PUBLIC_GITHUB_API_KEY;
+  console.log(process.env.NEXT_PUBLIC_GITHUB_API_KEY);
 
   const octokit = new Octokit({ auth: API_KEY });
   try {
