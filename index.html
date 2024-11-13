@@ -56,7 +56,9 @@ const displayUserData = (userData) => {
 };
 
 const loadUser = async (username) => {
-  const octokit = new Octokit({ auth: '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' });
+  const API_KEY = process.env.NEXT_PUBLIC_GITHUB_API_KEY;
+
+  const octokit = new Octokit({ auth: API_KEY });
   try {
     const response = await octokit.request('GET /users/{username}', { username });
     displayUserData(response.data);
