@@ -1,4 +1,4 @@
-# Product List with Cart
+# Github User Search App
 
 ![DESIGN-IMG](preview.jpg)
 
